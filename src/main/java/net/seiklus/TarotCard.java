@@ -26,7 +26,6 @@ import src.main.java.net.seiklus.proxy.CommonProxy;
     modid = TarotCard.MODID,
     name = TarotCard.MODNAME,
     version = TarotCard.MODVERSION,
-    dependencies = "required-after:Forge@[11.16.0.1865,)",
     useMetadata = true)
 
 public class TarotCard {
@@ -37,7 +36,7 @@ public class TarotCard {
     public static final String MODVERSION = "1.0.0";
 
 
-    @SidedProxy(clientSide = "mcjty.modtut.proxy.ClientProxy", serverSide = "mcjty.modtut.proxy.ServerProxy")
+    @SidedProxy(clientSide = "src.main.java.net.seiklus.proxy.ClientProxy", serverSide = "src.main.java.net.seiklus.proxy.CommonProxy")
     public static CommonProxy proxy;
 
 
@@ -52,6 +51,7 @@ public class TarotCard {
     public void preInit(FMLPreInitializationEvent event) {
         if (Config.logAll == true) { //hook for allowing mod to log all information
              logger = event.getModLog();
+             System.out.println("Fortune teller, tell me your secrets.");
         }
         proxy.preInit(event);
     }

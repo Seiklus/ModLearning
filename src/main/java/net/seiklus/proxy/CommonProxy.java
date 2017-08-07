@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import src.main.java.net.seiklus.Config;
+import src.main.java.net.seiklus.item.ItemPageCard;
 
 import java.io.File;
 
@@ -40,5 +41,6 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
+        event.getRegistry().register(new ItemPageCard());
     }
 }
